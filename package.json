@@ -1,0 +1,28 @@
+{
+  "name": "mwc_plugin_example",
+  "version": "0.0.1",
+  "description": "Examle plugin to mwc_core applicaiton - add route /example which returns the current time and system versions",
+  "main": "index.js",
+  "engines": {
+    "node": "0.10.x",
+    "npm": "1.3.x"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:mywebclass/mwc_plugin_example.git"
+  },
+  "dependencies": {},
+  "keywords": [
+    "mywebclass",
+    "example",
+    "core"
+  ],
+  "author": "Anatolij Ostroumov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mywebclass/mwc_plugin_example/issues"
+  }
+}
