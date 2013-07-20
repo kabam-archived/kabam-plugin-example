@@ -1,4 +1,11 @@
-mwc_pluggin_example
+mwc_plugin_example
 ===================
 
-Examle plugin to mwc_core applicaiton - att route /example which returns the current time and system versions
+Example plugin to mwc_core application - add route / example which returns the current time and system versions
+
+Developer Note
+==============
+
+Run jshint with:
+
+    grunt jshint
