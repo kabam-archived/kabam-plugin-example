@@ -9,6 +9,14 @@ module.exports = function(grunt) {
       },
       all: {
         src: ['Gruntfile.js', 'index.js']
+      },
+      ci: {
+        options: {
+          force: true,
+          reporter: 'checkstyle',
+          reporterOutput: 'jshint-result.xml'
+        },
+        src: ['Gruntfile.js', 'index.js']
       }
     }
   });
@@ -17,6 +25,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-jshint');
 
   // Default task.
-  grunt.registerTask('default', ['jshint']);
+  grunt.registerTask('default', ['jshint:all']);
 
 };
