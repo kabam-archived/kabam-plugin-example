@@ -10,24 +10,10 @@ exports.extendCore = function(core){
 //exports.setAppParameters = null;
 
 exports.setAppMiddlewares=function(core){
-    core.app.use('/config', function (request, response, next) {
-            response.json(
-                {
-                    'current_time': (new Date().toLocaleString()),
-                    'NODE_ENV': process.env.NODE_ENV,
-                    'OS':{
-                        'hostname':os.hostname(),
-                        'arch':os.arch(),
-                        'type':os.type(),
-                        'platform':os.platform(),
-                        'release':os.release(),
-                        'NodeJS version':process.version
-                    }
-                });
-            //next(); - there is no any other things to happen later
-            //so, the '/config/time' will never be executed
+    return function(request, response, next) {
+            response.setHeader('X-MWC-PLUGIN_EXAMPLE!','THIS ROCKS!');
+            next();
         }
-    );
 }
 
 exports.extendAppRoutes = function(core){
@@ -35,9 +21,21 @@ exports.extendAppRoutes = function(core){
         response.send('Current time is '+(new Date().toLocaleString()));
     });
 
-    //this route is not executed, because it is overlaped by middleware from setAppMiddlewares
-    core.app.get('/config/time',function(request,response){
-        response.send('Current time is '+(new Date().toLocaleString()));
+
+    core.app.get('/config',function(request,response){
+        response.json(
+            {
+                'current_time': (new Date().toLocaleString()),
+                'NODE_ENV': process.env.NODE_ENV,
+                'OS':{
+                    'hostname':os.hostname(),
+                    'arch':os.arch(),
+                    'type':os.type(),
+                    'platform':os.platform(),
+                    'release':os.release(),
+                    'NodeJS version':process.version
+                }
+            });
     });
 
     //we use Mongoose Model in this route
