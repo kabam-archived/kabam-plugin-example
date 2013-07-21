@@ -1,7 +1,7 @@
 {
   "name": "mwc_plugin_example",
   "version": "0.0.1",
-  "description": "Examle plugin to mwc_core applicaiton - add route /example which returns the current time and system versions",
+  "description": "Example plugin to mwc_core applicaiton",
   "main": "index.js",
   "engines": {
     "node": "0.10.x",
