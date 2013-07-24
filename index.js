@@ -5,16 +5,18 @@ exports.extendCore = function(core){
     setInterval(function(){
         core.emit('Coocoo!','Dzin!');
     },5000);
-}
+};
 
-//exports.setAppParameters = null;
+exports.setAppParameters = function(core){
+  core.app.set('Var1', '42');
+};
 
-exports.setAppMiddlewares=function(core){
+exports.setAppMiddlewares = function(core){
     return function(request, response, next) {
             response.setHeader('X-MWC-PLUGIN_EXAMPLE!','THIS ROCKS!');
             next();
         }
-}
+};
 
 exports.extendAppRoutes = function(core){
     core.app.get('/time',function(request,response){
@@ -57,7 +59,7 @@ exports.extendAppRoutes = function(core){
         request.emitMWC('honeypot accessed','Somebody with IP of '+request.ip+' accessed the honeypot');
         response.send('Administrator was notified about your actions!');
     });
-}
+};
 
 
 
