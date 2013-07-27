@@ -8,23 +8,39 @@ module.exports = function(grunt) {
         jshintrc: '.jshintrc'
       },
       all: {
-        src: ['Gruntfile.js', 'index.js']
+        src: ['Gruntfile.js', 'index.js', 'example/**/*.js', 'test/**/*.js']
       },
       ci: {
         options: {
           force: true,
           reporter: 'checkstyle',
-          reporterOutput: 'jshint-result.xml'
+          reporterOutput: 'results/jshint-result.xml'
         },
-        src: ['Gruntfile.js', 'index.js']
+        src: '<%= jshint.all.src %>'
+      }
+    },
+    simplemocha: {
+      options: {
+        globals: ['should'],
+        ignoreLeaks: false,
+        ui: 'bdd'
+      },
+      all: {
+        options: {
+          reporter: 'spec'
+        },
+        src: [ 'test/**/*.js' ]
       }
     }
   });
 
   // These plugins provide necessary tasks.
   grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-simple-mocha');
 
+  // Tasks
+  grunt.registerTask('test', ['simplemocha']);
   // Default task.
-  grunt.registerTask('default', ['jshint:all']);
+  grunt.registerTask('default', ['jshint', 'test']);
 
 };

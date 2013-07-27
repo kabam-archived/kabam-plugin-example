@@ -26,7 +26,8 @@
     "url": "https://github.com/mywebclass/mwc_plugin_example/issues"
   },
   "devDependencies": {
-    "grunt": "~0.4.1",
-    "grunt-contrib-jshint": "~0.6.0"
+    "grunt": "*",
+    "grunt-contrib-jshint": "*",
+    "grunt-simple-mocha": "*"
   }
 }
