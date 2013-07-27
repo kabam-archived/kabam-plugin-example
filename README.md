@@ -9,6 +9,8 @@ Add routes
   /redis
   /honeypot
 
+[![Build Status](https://travis-ci.org/mywebclass/mwc_plugin_example.png)](https://travis-ci.org/mywebclass/mwc_plugin_example)
+
 Developer Note
 ==============
 
