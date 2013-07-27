@@ -4,21 +4,21 @@ exports.extendCore = function(core) {
   //some other Cocoo clock
   setInterval(function() {
     core.emit('Coocoo!','Dzin!');
-  }, 5000);
+  }, 500);
 };
 
-exports.setAppParameters = function(core) {
+exports.extendApp = function(core) {
   core.app.set('Var1', '42');
 };
 
-exports.setAppMiddlewares = function(core) {
+exports.extendMiddlewares = function(core) {
   return function(request, response, next) {
     response.setHeader('X-MWC-PLUGIN_EXAMPLE!','THIS ROCKS!');
     next();
   };
 };
 
-exports.extendAppRoutes = function(core) {
+exports.extendRoutes = function(core) {
   core.app.get('/time',function(request, response) {
     response.send('Current time is ' + (new Date().toLocaleString()));
   });

@@ -13,7 +13,7 @@ describe('mwc plugin example', function() {
     MWC.listen();
   });
 
-  describe('#setAppParameters', function() {
+  describe('#extendApp', function() {
 
     it('should set Var1 with the value \'42\'', function() {
       MWC.app.get('Var1').should.equal('42');
