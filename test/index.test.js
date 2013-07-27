@@ -1,6 +1,6 @@
 var should = require('should'),
   example = require('./../index.js'),
-  mwcCore = require('mwc_core'),
+  mwcCore = require('mwc_kernel'),
   config = require('./config.json').development;
 
 
