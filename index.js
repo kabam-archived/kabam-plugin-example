@@ -1,17 +1,10 @@
 var os = require('os');
 
-exports.extendCore = function(core) {
-  //some other Cocoo clock
-  setInterval(function() {
-    core.emit('Coocoo!','Dzin!');
-  }, 500);
-};
-
 exports.extendApp = function(core) {
   core.app.set('Var1', '42');
 };
 
-exports.extendMiddlewares = function(core) {
+exports.extendMiddleware = function(core) {
   return function(request, response, next) {
     response.setHeader('X-MWC-PLUGIN_EXAMPLE!','THIS ROCKS!');
     next();
@@ -42,7 +35,7 @@ exports.extendRoutes = function(core) {
 
   //we use Mongoose Model in this route
   core.app.get('/team', function(request, response) {
-    request.MODEL.Users.find({active:1}, function(err, users) {
+    request.model.Users.find({active:1}, function(err, users) {
       if (err) { throw err; }
       response.json({'Team':users});
     });
