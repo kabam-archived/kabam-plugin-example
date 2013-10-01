@@ -1,19 +1,26 @@
-mwc_plugin_example
-===================
+kabam-plugin-example
+====================
 
-Example plugin to mwc_core application.
-Add routes
+This example demonstrate how a Kabam plugin works.
+
+Add routes:
+
+```
+
   /config
   /time
   /team
   /redis
   /honeypot
+```
 
-[![Build Status](https://travis-ci.org/mywebclass/mwc_plugin_example.png)](https://travis-ci.org/mywebclass/mwc_plugin_example)
+[![Build Status](https://travis-ci.org/mykabam/kabam-plugin-example.png)](https://travis-ci.org/mykabam/kabam-plugin-example)
 
-Developer Note
-==============
+Build the example
+=================
 
-Run jshint with:
+Run grunt to build the example:
 
-    grunt jshint
+```
+$ grunt
+```

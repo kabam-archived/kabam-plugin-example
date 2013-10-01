@@ -1,22 +1,24 @@
-var should = require('should'),
+var
+  /* exported should */
+  should = require('should'),
   example = require('./../index.js'),
-  mwcCore = require('mwc_kernel'),
+  Kernel = require('kabam-kernel'),
   config = require('./config.json').development;
 
 
-describe('mwc plugin example', function() {
-  var MWC;
+describe('kabam plugin example', function() {
+  var kabam;
 
   before(function() {
-    MWC = new mwcCore(config);
-    MWC.usePlugin(example);
-    MWC.listen();
+    kabam = new Kernel(config);
+    kabam.usePlugin(example);
+    kabam.listen();
   });
 
   describe('#extendApp', function() {
 
     it('should set Var1 with the value \'42\'', function() {
-      MWC.app.get('Var1').should.equal('42');
+      kabam.app.get('Var1').should.equal('42');
     });
 
   });
