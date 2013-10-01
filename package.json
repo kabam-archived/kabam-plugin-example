@@ -1,7 +1,7 @@
 {
-  "name": "mwc_plugin_example",
+  "name": "kabam-plugin-example",
   "version": "0.0.1",
-  "description": "Example plugin to mwc_core applicaiton",
+  "description": "This example demonstrate how a Kabam plugin works.",
   "main": "index.js",
   "engines": {
     "node": "0.10.x",
@@ -12,24 +12,25 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:mywebclass/mwc_plugin_example.git"
+    "url": "git@github.com:mykabam/kabam-plugin-example.git"
   },
   "dependencies": {},
   "keywords": [
-    "mywebclass",
+    "kabam",
+    "kabam plugin",
     "example",
     "core"
   ],
   "author": "Anatolij Ostroumov",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/mywebclass/mwc_plugin_example/issues"
+    "url": "https://github.com/mykabam/kabam-plugin-example/issues"
   },
   "devDependencies": {
     "mocha":"*",
     "grunt": "*",
     "grunt-cli": "*",
-    "mwc_kernel": "git+https://github.com/mywebclass/mwc_kernel.git",
+    "kabam-kernel": "git+https://github.com/mykabam/kabam-kernel.git",
     "grunt-contrib-jshint": "*",
     "grunt-simple-mocha": "*",
     "should": "*"
